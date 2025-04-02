@@ -26,16 +26,16 @@ def clear(s):
 
 
 # Read input CSV data
-data = file2array('in.csv')
+data = file2array('in_prod.csv')
 
 # Read XML template files
-with open('tpl/tpl.xml', 'r', encoding='cp1251') as f:
+with open('tpl/prod_tpl.xml', 'r', encoding='cp1251') as f:
     base = f.read()
-with open('tpl/tpl1.xml', 'r', encoding='cp1251') as f:
+with open('tpl/prod_tpl1.xml', 'r', encoding='cp1251') as f:
     tpl = f.read()
-with open('tpl/tpl2.xml', 'r', encoding='cp1251') as f:
+with open('tpl/prod_tpl2.xml', 'r', encoding='cp1251') as f:
     tpl_ind_pred = f.read()
-with open('tpl/tpl3.xml', 'r', encoding='cp1251') as f:
+with open('tpl/prod_tpl3.xml', 'r', encoding='cp1251') as f:
     tpl_ext = f.read()
 
 
