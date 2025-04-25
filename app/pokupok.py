@@ -38,7 +38,8 @@ sum8 = 0
 
 # Process data
 for element in data:
-    print(element)
+    if not element["line2"].strip():
+        break
     fill = tpl.replace('$line10', element["line10"])
     fill = fill.replace('$line1', clear(element["line1"]))
     fill = fill.replace('$line2', element["line2"].strip())

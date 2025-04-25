@@ -60,8 +60,14 @@ inn_corrections = {
 # Process data
 for element in data:
     # print(element)
+    if not element["line2"].strip():
+        break
+
     inn = element["line5"].strip()
     inn = inn_corrections.get(inn, inn)
+
+    if len(inn) == 9:
+        inn = '0' + inn
 
     if len(inn) == 12:
         tmp_tpl = tpl_ind_pred
@@ -76,7 +82,10 @@ for element in data:
     fill = fill.replace('$line3', element["line3"])
     fill = fill.replace('$line4', element["line4"])
     fill = fill.replace('$line5', inn)
-    fill = fill.replace('$line6', clear(element["line6"]))
+    kpp = clear(element["line6"])
+    if len(kpp) == 8:
+        kpp = "0" + kpp
+    fill = fill.replace('$line6', kpp)
     fill = fill.replace('$line7', clear(element["line7"]))
     fill = fill.replace('$line8', clear(element["line8"]))
     tmp8 = clear(element["line8"])
