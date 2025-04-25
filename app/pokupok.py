@@ -62,7 +62,7 @@ base = base.replace('$data', text)
 base = base.replace('$sum8', str(round(sum8, 2)))
 
 # Write to output file
-out_name = 'NO_NDS.9_7801_7801_780161151018_20160725_4D085B51-7556-4827-BD18-0466799C6603.xml'
+out_name = 'NO_NDS.8_7801_7801_780161151018_20250425_FCD6C7D8-F17B-4C17-AA1B-9AA07BA762AE.xml'
 with open(out_name, 'w', encoding='cp1251') as f:
     f.write(base)
 
