@@ -6,7 +6,7 @@ def file2array(filename):
         keys = f.read().strip().splitlines()
 
     data = []
-    for i, line in enumerate(keys[2:], start=1):
+    for i, line in enumerate(keys[1:], start=1):
         if line.strip() and re.match(r'^\d', line):
             ex = line.split(';')
             entry = {f'line{j + 1}': ex[j] if j < len(ex) else '' for j in range(12)}
@@ -59,7 +59,6 @@ inn_corrections = {
 
 # Process data
 for element in data:
-    # print(element)
     if not element["line2"].strip():
         break
 
