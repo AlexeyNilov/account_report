@@ -15,4 +15,4 @@ coverage.xml
 htmlcov
 *.csv
 legacy
-*.xml
+NO*

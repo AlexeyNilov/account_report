@@ -65,7 +65,7 @@ for element in data:
     inn = element["line5"].strip()
     inn = inn_corrections.get(inn, inn)
 
-    if len(inn) == 9:
+    if len(inn) in [9, 11]:
         inn = '0' + inn
 
     if len(inn) == 12:
