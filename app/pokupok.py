@@ -6,11 +6,13 @@ def file2array(filename):
         keys = f.read().strip().splitlines()
 
     data = []
+    line_number = 0
     for i, line in enumerate(keys[1:], start=1):
         if line.strip():
+            line_number += 1
             ex = line.split(';')
             entry = {f'line{j + 1}': ex[j] if j < len(ex) else '' for j in range(12)}
-            entry['line1'] = str(i)
+            entry['line1'] = str(line_number)
             data.append(entry)
 
     return data
@@ -62,7 +64,7 @@ base = base.replace('$data', text)
 base = base.replace('$sum8', str(round(sum8, 2)))
 
 # Write to output file
-out_name = 'NO_NDS.8_7801_7801_780161151018_20250425_FCD6C7D8-F17B-4C17-AA1B-9AA07BA762AE.xml'
+out_name = 'D:\\pokupok\\NO_NDS.8_7801_7801_780161151018_20250425_FCD6C7D8-F17B-4C17-AA1B-9AA07BA762AE.xml'
 with open(out_name, 'w', encoding='cp1251') as f:
     f.write(base)
 
