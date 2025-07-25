@@ -48,7 +48,8 @@ with open('tpl/prod_tpl2.xml', 'r', encoding='cp1251') as f:
     tpl_ind_pred = f.read()
 with open('tpl/prod_tpl3.xml', 'r', encoding='cp1251') as f:
     tpl_ext = f.read()
-
+with open('tpl/prod_tpl4.xml', 'r', encoding='cp1251') as f:
+    tpl_26 = f.read()
 
 text = ''
 sum8 = 0
@@ -83,6 +84,8 @@ for element in data:
         tmp_tpl = tpl_ind_pred
     elif element["line10"] == '18':
         tmp_tpl = tpl_ext
+    elif element["line10"] == '26':
+        tmp_tpl = tpl_26
     else:
         tmp_tpl = tpl
 
@@ -123,7 +126,7 @@ base = base.replace('$sum9', str(round(sum9, 2)))
 folder_path = Path('D:/prodaz')  # Use forward slashes or raw string
 folder_path.mkdir(parents=True, exist_ok=True)
 
-file_name = 'NO_NDS.9_7801_7801_780161151018_20250425_C9AF7D59-A619-4D26-A30C-F5E39DEBBD5B.xml'
+file_name = 'NO_NDS.9_7801_7801_780161151018_20250726_375457CA-AD2B-47FF-A025-ABF337C26A36.xml'
 out_path = folder_path / file_name
 with open(str(out_path), 'w', encoding='cp1251') as f:
     f.write(base)
