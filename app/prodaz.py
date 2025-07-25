@@ -50,6 +50,8 @@ with open('tpl/prod_tpl3.xml', 'r', encoding='cp1251') as f:
     tpl_ext = f.read()
 with open('tpl/prod_tpl4.xml', 'r', encoding='cp1251') as f:
     tpl_26 = f.read()
+with open('tpl/prod_tpl5.xml', 'r', encoding='cp1251') as f:
+    tpl_02 = f.read()
 
 text = ''
 sum8 = 0
@@ -86,6 +88,8 @@ for element in data:
         tmp_tpl = tpl_ext
     elif element["line10"] == '26':
         tmp_tpl = tpl_26
+    elif element["line10"] == '02':
+        tmp_tpl = tpl_02
     else:
         tmp_tpl = tpl
 
