@@ -8,7 +8,7 @@ def file2array(filename):
 
     data = []
     line_number = 0
-    for i, line in enumerate(keys[1:], start=1):
+    for _, line in enumerate(keys[1:], start=1):
         if line.strip() and re.match(r'^\d', line):
             line_number += 1
             ex = line.split(';')
@@ -35,6 +35,7 @@ partial_name = 'продаж'
 for file in folder_path.iterdir():
     if file.is_file() and partial_name in file.name:
         print(file.resolve())
+        break
 
 data = file2array(file.resolve())
 

@@ -16,3 +16,4 @@ htmlcov
 *.csv
 legacy
 NO*
+*.zip
