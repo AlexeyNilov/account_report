@@ -77,7 +77,7 @@ base = base.replace('$sum8', str(round(sum8, 2)))
 folder_path = Path('D:/pokupok')  # Use forward slashes or raw string
 folder_path.mkdir(parents=True, exist_ok=True)
 
-file_name = 'NO_NDS.8_7801_7801_780161151018_20250425_FCD6C7D8-F17B-4C17-AA1B-9AA07BA762AE.xml'
+file_name = 'NO_NDS.8_7801_7801_780161151018_20250726_FEAA4ACC-8475-48F5-8F42-A5D075E65F0C.xml'
 out_path = folder_path / file_name
 with open(str(out_path), 'w', encoding='cp1251') as f:
     f.write(base)
