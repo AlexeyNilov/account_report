@@ -1,4 +1,5 @@
 import re
+from pathlib import Path
 
 
 def file2array(filename):
@@ -27,10 +28,18 @@ def clear(s):
 
 
 # Read input CSV data
-data = file2array('in_pok.csv')
+
+folder_path = Path('D:')
+partial_name = 'покупок'
+
+for file in folder_path.iterdir():
+    if file.is_file() and partial_name in file.name:
+        print(file.resolve())
+
+data = file2array(file.resolve())
 
 # Read XML template files
-with open('tpl/pok_tpl.xml', 'r', encoding='cp1251') as f:
+with open('tpl/pok_tpl_511.xml', 'r', encoding='cp1251') as f:
     base = f.read()
 with open('tpl/pok_tpl1.xml', 'r', encoding='cp1251') as f:
     tpl = f.read()
@@ -64,8 +73,12 @@ base = base.replace('$data', text)
 base = base.replace('$sum8', str(round(sum8, 2)))
 
 # Write to output file
-out_name = 'D:\\pokupok\\NO_NDS.8_7801_7801_780161151018_20250425_FCD6C7D8-F17B-4C17-AA1B-9AA07BA762AE.xml'
-with open(out_name, 'w', encoding='cp1251') as f:
+folder_path = Path('D:/pokupok')  # Use forward slashes or raw string
+folder_path.mkdir(parents=True, exist_ok=True)
+
+file_name = 'NO_NDS.8_7801_7801_780161151018_20250425_FCD6C7D8-F17B-4C17-AA1B-9AA07BA762AE.xml'
+out_path = folder_path / file_name
+with open(str(out_path), 'w', encoding='cp1251') as f:
     f.write(base)
 
 print("done")
